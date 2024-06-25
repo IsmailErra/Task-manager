@@ -1,0 +1,423 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Thèmes */
+body.theme-vert nav {
+    background-color: #4CAF50;
+}
+
+body.theme-bleu nav {
+    background-color: #2196F3;
+}
+
+body.theme-rose nav {
+    background-color: #E91E63;
+}
+
+body.theme-jaune nav {
+    background-color: #FFEB3B;
+}
+
+/* Thèmes pour le texte "Gestionnaire de tâches" */
+.theme-vert #taskApp h2 {
+    color: #4CAF50;
+}
+
+.theme-bleu #taskApp h2 {
+    color: #2196F3;
+}
+
+.theme-rose #taskApp h2 {
+    color: #E91E63;
+}
+
+.theme-jaune #taskApp h2 {
+    color: #FFEB3B;
+}
+
+/* Thèmes pour les boutons */
+.theme-vert .theme-button {
+    background-color: #4CAF50;
+}
+
+.theme-bleu .theme-button {
+    background-color: #2196F3;
+}
+
+.theme-rose .theme-button {
+    background-color: #E91E63;
+}
+
+.theme-jaune .theme-button {
+    background-color: #FFEB3B;
+}
+
+nav {
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+}
+
+body.dark-mode nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li label {
+    color: white;
+    margin-right: 10px;
+}
+
+nav ul li select {
+    font-size: 1em;
+    padding: 5px;
+}
+
+#taskApp {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#taskApp .box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    /* Augmenter la largeur */
+    height: 700px;
+    /* Ajouter une hauteur fixe */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+body.dark-mode #taskApp .box {
+    background-color: #1e1e1e;
+}
+
+#taskApp h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.input-container {
+    background-color: inherit;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taskInput {
+    width: 60%;
+    padding: 15px;
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #taskInput {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+#taskPriority {
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #taskPriority {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+#addTaskBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#addTaskBtn:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode #addTaskBtn {
+    background-color: #81c784;
+    color: #333;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.filter-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-container button:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode .filter-container button {
+    background-color: #81c784;
+    color: #333;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+#taskList li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #taskList li {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+#taskList li button {
+    background-color: #03A9F4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 5px;
+}
+
+#taskList li button:first-of-type {
+    margin-left: 0;
+}
+
+#taskList li button:hover {
+    background-color: #0288D1;
+}
+
+body.dark-mode #taskList li button {
+    background-color: #81c784;
+    color: #333;
+}
+
+body.dark-mode #taskList li button:hover {
+    background-color: #66BB6A;
+}
+
+.complete-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.complete-circle.completed {
+    background-color: #4CAF50;
+}
+
+.task-content {
+    flex: 1;
+    margin-right: 10px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+#taskList li.completed .task-content {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.low {
+    border-left: 5px solid #4CAF50;
+}
+
+.medium {
+    border-left: 5px solid #FFEB3B;
+}
+
+.high {
+    border-left: 5px solid #F44336;
+}
+
+
+/* General styles for all devices */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#taskList li.completed .task-content {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.complete-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.complete-circle.completed {
+    background-color: green;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Theme-specific button styles */
+.theme-button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-default {
+    background-color: #008cba;
+    color: white;
+}
+
+.theme-dark {
+    background-color: #555;
+    color: white;
+}
+
+/* Responsive styles for iPhone 12 and Samsung S20 */
+@media (max-width: 390px), (max-width: 412px) {
+    #taskList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #taskList li .task-content {
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .complete-circle {
+        margin-bottom: 10px;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-container button {
+        margin-bottom: 10px;
+    }
+}

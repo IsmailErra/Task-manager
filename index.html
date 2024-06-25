@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de tâches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="toggleDarkMode">Mode Sombre</a></li>
+            <li>
+                <label for="themeSelect">Thème :</label>
+                <select id="themeSelect">
+                    <option value="vert">Vert</option>
+                    <option value="bleu">Bleu</option>
+                    <option value="rose">Rose</option>
+                    <option value="jaune">Jaune</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <div id="taskApp">
+        <div class="box">
+            <h2>Gestionnaire de tâches</h2>
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="taskInput" placeholder="Ajouter une tâche">
+                    <select id="taskPriority">
+                        <option value="low">Faible</option>
+                        <option value="medium">Moyenne</option>
+                        <option value="high">Haute</option>
+                    </select>
+                    <button id="addTaskBtn">Ajouter</button>
+                </div>
+                <div class="filter-container">
+                    <button id="filterAll">Toutes</button>
+                    <button id="filterPending">En Attente</button>
+                    <button id="filterCompleted">Terminées</button>
+                </div>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
